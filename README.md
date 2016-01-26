@@ -1,5 +1,3 @@
-(CI badges)
+# Request and Response Helper
 
-# HARA XXXXXX Service
-
-[statement of what the service is for]
+Small library class for manipulating PSR-7 HTTP Request and Response objects.  Mostly useful for services using JSON Request and Response bodies.
