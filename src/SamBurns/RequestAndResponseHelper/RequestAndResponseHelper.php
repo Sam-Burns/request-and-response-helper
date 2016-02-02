@@ -50,7 +50,7 @@ class RequestAndResponseHelper
      */
     public function convertIncomingResponseToArray(ResponseInterface $response): array
     {
-        $request->getBody()->rewind();
+        $response->getBody()->rewind();
         $body = $response->getBody()->getContents();
         $bodyArray = json_decode($body, true);
 
