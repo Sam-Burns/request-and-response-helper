@@ -14,6 +14,7 @@ class RequestAndResponseHelper
      */
     public function requestBodyJsonToArray(ServerRequestInterface $request): array
     {
+        $request->getBody()->rewind();
         $rawBodyContent = $request->getBody()->getContents();
         $urlDecodedContent = urldecode($rawBodyContent);
         $jsonDecodedContent = json_decode($urlDecodedContent, true);
@@ -49,6 +50,7 @@ class RequestAndResponseHelper
      */
     public function convertIncomingResponseToArray(ResponseInterface $response): array
     {
+        $request->getBody()->rewind();
         $body = $response->getBody()->getContents();
         $bodyArray = json_decode($body, true);
 
