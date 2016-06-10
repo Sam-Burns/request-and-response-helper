@@ -31,15 +31,25 @@ class RequestAndResponseHelper
     }
 
     /**
-     * Takes an array and puts JSON on the response object
+     * Takes an array and puts JSON on the response object. Optionally coerce the array into an object first
      */
-    public function responseWithJsonAdded(ResponseInterface $response, array $responseData): ResponseInterface
-    {
-        return $this->addJsonToHttpMessage($response, $responseData);
+    public function responseWithJsonAdded(
+        ResponseInterface $response,
+        array             $responseData,
+        bool              $castToObject = false
+    ): ResponseInterface {
+        return $this->addJsonToHttpMessage($response, $responseData, $castToObject);
     }
 
-    private function addJsonToHttpMessage(MessageInterface $message, array $dataToTurnIntoJson)
-    {
+    private function addJsonToHttpMessage(
+        MessageInterface $message,
+        array            $dataToTurnIntoJson,
+        bool             $castToObject = false
+    ) {
+        if ($castToObject) {
+            $dataToTurnIntoJson = (object)$dataToTurnIntoJson;
+        }
+
         $json = json_encode($dataToTurnIntoJson);
         $message->getBody()->write($json);
         return $message;
