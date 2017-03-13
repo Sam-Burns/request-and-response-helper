@@ -16,8 +16,7 @@ class RequestAndResponseHelper
     {
         $request->getBody()->rewind();
         $rawBodyContent = $request->getBody()->getContents();
-        $urlDecodedContent = urldecode($rawBodyContent);
-        $jsonDecodedContent = json_decode($urlDecodedContent, true);
+        $jsonDecodedContent = json_decode($rawBodyContent, true);
         return $jsonDecodedContent ?: [];
     }
 
