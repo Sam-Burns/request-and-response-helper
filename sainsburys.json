@@ -1,0 +1,21 @@
+{
+    "schema-version": "1.0.0",
+    "name": "request-and-response-helper",
+    "description": "code repo for a library class useful for services using json requests",
+    "owners": [
+      {
+        "type": "TEAM",
+        "name": "DataTech_SLT",
+        "username":  "DataTech_SLT",
+        "email": "DataTech_SLT@sainsburys.co.uk"
+      }
+    ],
+    "maintainers": [
+      {
+        "type": "TEAM",
+        "name": "DataTech_SLT",
+        "username":  "DataTech_SLT",
+        "email": "DataTech_SLT@sainsburys.co.uk"
+      }
+    ]
+  }
